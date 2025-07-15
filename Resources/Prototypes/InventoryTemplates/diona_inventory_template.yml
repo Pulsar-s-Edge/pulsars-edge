@@ -137,7 +137,7 @@
       slotTexture: wallet
       slotFlags: WALLET
       stripTime: 6
-      uiWindowPos: 2,0
+      uiWindowPos: 3,1
       strippingWindowPos: 3,5
       dependsOn: jumpsuit
       displayName: Wallet
@@ -181,3 +181,18 @@
       dependsOn: head
       displayName: Helmet_attachment
     #End Mono
+    # Hardlight: accessory slots, originally three but the stripping window sucks
+    - name: accessory1
+      slotTexture: neck
+      slotFlags: ACCESSORY
+      stripTime: 6
+      uiWindowPos: 3,3
+      strippingWindowPos: -1,2
+      displayName: Accessory
+    - name: accessory2
+      slotTexture: neck
+      slotFlags: ACCESSORY
+      stripTime: 6
+      uiWindowPos: 3,2
+      strippingWindowPos: -1,3
+      displayName: Accessory
