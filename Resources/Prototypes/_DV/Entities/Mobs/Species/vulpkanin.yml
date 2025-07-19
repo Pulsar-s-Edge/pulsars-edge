@@ -70,6 +70,10 @@
         sprite: _DV/Mobs/Customization/Vulpkanin/masking_helpers.rsi
         state: female_full
         visible: false
+      - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+      - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+      - map: [ "accessory1" ]
+      - map: [ "accessory2" ]
       - map: [ "jumpsuit" ]
       - map: [ "balaclava" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
@@ -126,7 +130,11 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
-  - type: InteractionPopup # Frontier
+  - type: Temperature
+    heatDamageThreshold: 320 # 5 lower than base # Frontier: 315<320
+    coldDamageThreshold: 220 # 40 lower than base, very insulating fur
+  # Frontier: interaction & tall/short traits
+  - type: InteractionPopup
     successChance: 1
     interactSuccessString: pat-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
