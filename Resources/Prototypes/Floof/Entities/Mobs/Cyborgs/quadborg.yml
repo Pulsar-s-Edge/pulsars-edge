@@ -3,6 +3,8 @@
   id: BorgChassisQuad
   parent: BaseBorgChassisNT
   components:
+  - type: Body
+    prototype: Quadborg
   - type: Sprite
     sprite: Floof/Mobs/Silicon/quad.rsi
     scale: 0.7, 0.7
@@ -63,6 +65,68 @@
   - type: SiliconLawProvider
     laws: Qborg
   - type: LeashAnchor # Floofstation
+  - type: InteractionPopup  # Hardlight change
+    interactSuccessString: petting-success-generic-cyborg
+    interactFailureString: petting-failure-generic-cyborg
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: SyndiQuad
+  parent: [BorgChassisQuad, BaseBorgChassisSyndicate]
+  components:
+  - type: Sprite
+    sprite: Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: SyndQuad
+      map: ["movement"]
+    - state: SyndQuadl
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: SyndQuadr
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: SyndQuad_moving
+    noMovementLayers:
+      movement:
+        state: SyndQuad
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Syndicate
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Syndicate
+    - Binary
+    - Common
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: BorgChassis
+    maxModules: 8
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleSecurity
+      - BorgModuleMedical
+      - BorgModuleSyndicate
+      - BorgModuleSyndicateAssault
+    hasMindState: SyndQuadl
+    noMindState: SyndQuadr
+  - type: AccessReader
+    access: [["NuclearOperative"], ["SyndicateAgent"], ["Mercenary"]]
+  - type: BorgTransponder
+    sprite:
+      sprite: Floof/Mobs/Silicon/quad.rsi
+      state: SyndQuad
+    name: cyborg
 
 - type: entity
   id: BorgChassisQuadCC
@@ -233,7 +297,7 @@
     access: [["Cargo"], ["Service"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: StationEfficiency
-    
+
 - type: entity
   id: BorgChassisQuadEngineer
   parent: BorgChassisQuad
