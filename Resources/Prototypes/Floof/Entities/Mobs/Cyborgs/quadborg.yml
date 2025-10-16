@@ -70,6 +70,12 @@
     interactFailureString: petting-failure-generic-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadsprite
+    stateOn: quadspriteballz
+    movementStateOff: quadsprite_moving
+    movementStateOn: quadsprite_movingballz
 
 - type: entity
   id: SyndiQuad
@@ -120,6 +126,10 @@
       - BorgModuleSyndicateAssault
     hasMindState: SyndQuadl
     noMindState: SyndQuadr
+  - type: Access
+    tags:
+    - SyndicateAgent
+    - NuclearOperative
   - type: AccessReader
     access: [["NuclearOperative"], ["SyndicateAgent"], ["Mercenary"]]
   - type: BorgTransponder
@@ -127,6 +137,13 @@
       sprite: Floof/Mobs/Silicon/quad.rsi
       state: SyndQuad
     name: cyborg
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: SyndQuad
+    stateOn: SyndQuadballz
+    movementStateOff: SyndQuad_moving
+    movementStateOn: SyndQuad_movingballz
+  # Note: No toggle added here; no provided SyndQuad ballz states.
 
 - type: entity
   id: BorgChassisQuadCC
@@ -148,6 +165,7 @@
       visible: false
   - type: IntrinsicRadioTransmitter
     channels:
+    - ColCom
     - Command
     - Security
     - Supply
@@ -159,6 +177,7 @@
     - Common
   - type: ActiveRadio
     channels:
+    - ColCom
     - Command
     - Security
     - Supply
@@ -169,7 +188,7 @@
     - Binary
     - Common
   - type: BorgChassis
-    maxModules: 10
+    maxModules: 12
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
@@ -182,8 +201,11 @@
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
       - BorgModuleJanitor
+  - type: Access
+    tags:
+    - CentralCommand
   - type: AccessReader
-    access: [["Security"], ["Armory"], ["Command"]]
+    access: [["Security"], ["Armory"], ["Command"], ["CentralCommand"]]
   - type: SpriteMovement
     movementLayers:
       movement:
@@ -193,6 +215,12 @@
         state: quadspriteCC
   - type: SiliconLawProvider
     laws: ColComm
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadspriteCC
+    stateOn: quadspriteCCballz
+    movementStateOff: quadspriteCC_moving
+    movementStateOn: quadspriteCC_movingballz
 
 - type: entity
   id: BorgChassisQuadsalv
@@ -245,6 +273,12 @@
     access: [["Cargo"], ["Salvage"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: Corporate
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadspritesalv
+    stateOn: quadspritesalvballz
+    movementStateOff: quadspritesalv_moving
+    movementStateOn: quadspritesalv_movingballz
 
 - type: entity
   id: BorgChassisQuadserv
@@ -297,6 +331,13 @@
     access: [["Cargo"], ["Service"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: StationEfficiency
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadspriteserv
+    stateOn: quadspriteservballz
+    movementStateOff: quadspriteserv_moving
+    movementStateOn: quadspriteserv_movingballz
+
 
 - type: entity
   id: BorgChassisQuadEngineer
@@ -351,6 +392,13 @@
     access: [["Cargo"], ["Service"], ["Command"], ["Research"], ["Maintenance"], ["Engineering"]]
   - type: SiliconLawProvider
     laws: StationEfficiency
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: engieborg
+    stateOn: engieborgballz
+    movementStateOff: engieborg_moving
+    movementStateOn: engieborg_movingballz
+  # Note: No toggle added here; no provided engieborg ballz states.
 
 - type: entity
   id: BorgChassisQuadmed
@@ -403,6 +451,12 @@
     access: [["Medical"], ["Salvage"], ["Command"], ["Research"], ["Maintenance"]]
   - type: SiliconLawProvider
     laws: Medical
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: quadspritemed
+    stateOn: quadspritemedballz
+    movementStateOff: quadspritemed_moving
+    movementStateOn: quadspritemed_movingballz
   # - type: LanguageKnowledge
     # speaks:
     # - TauCetiBasic
@@ -482,6 +536,12 @@
     access: [["Medical"], ["Salvage"], ["Service"], ["Security"], ["Command"], ["Research"], ["Mercenary"]]
   - type: SiliconLawProvider
     laws: Qborg
+  - type: SpriteStateToggle
+    spriteLayer: movement
+    stateOff: Apex
+    stateOn: Apexballz
+    movementStateOff: apex_moving
+    movementStateOn: Apex_movingballz
 
 - type: entity
   id: BorgChassisChip
@@ -544,3 +604,4 @@
     access: [["Medical"], ["Salvage"], ["Service"], ["Security"], ["Command"], ["Research"], ["Mercenary"]]
   - type: SiliconLawProvider
     laws: Qborg
+  # Note: No toggle added here; no provided Chip ballz states.
