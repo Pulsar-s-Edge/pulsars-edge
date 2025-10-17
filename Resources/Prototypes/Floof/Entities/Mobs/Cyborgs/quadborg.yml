@@ -126,10 +126,10 @@
       - BorgModuleSyndicateAssault
     hasMindState: SyndQuadl
     noMindState: SyndQuadr
-  - type: Access
-    tags:
-    - SyndicateAgent
-    - NuclearOperative
+  - type: Access #HL
+    tags:  #HL
+    - SyndicateAgent #HL
+    - NuclearOperative #HL
   - type: AccessReader
     access: [["NuclearOperative"], ["SyndicateAgent"], ["Mercenary"]]
   - type: BorgTransponder
@@ -165,7 +165,7 @@
       visible: false
   - type: IntrinsicRadioTransmitter
     channels:
-    - ColCom
+    - ColCom #HL
     - Command
     - Security
     - Supply
@@ -177,7 +177,7 @@
     - Common
   - type: ActiveRadio
     channels:
-    - ColCom
+    - ColCom #HL
     - Command
     - Security
     - Supply
@@ -188,7 +188,7 @@
     - Binary
     - Common
   - type: BorgChassis
-    maxModules: 12
+    maxModules: 12 #HL
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
@@ -201,9 +201,9 @@
       - BorgModuleSyndicate
       - BorgModuleSyndicateAssault
       - BorgModuleJanitor
-  - type: Access
-    tags:
-    - CentralCommand
+  - type: Access #HL
+    tags: #HL
+    - CentralCommand #HL
   - type: AccessReader
     access: [["Security"], ["Armory"], ["Command"], ["CentralCommand"]]
   - type: SpriteMovement
