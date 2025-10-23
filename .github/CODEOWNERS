@@ -43,3 +43,28 @@
 #/Content.*/NPC @metalgearsloth
 #/Content.*/Shuttles @metalgearsloth
 #/Content.*/Weapons @metalgearsloth
+
+# Pulsar's stuff here
+
+# C#
+/Content.*/ @superjeepboy
+
+# YAML
+/Resources/*.yml @LokiLotus @AryaRaiin @superjeepboy
+/Resources/**/*.yml @Lokilotus @AryaRaiin @superjeepboy
+
+# Locales/FTL
+/Resources/Locale @superjeepboy
+
+# Rules/Guidebook
+/Resources/ServerInfo @superjeepboy @AryaRaiin
+
+# Art
+*.png @AryaRaiin
+*.svg @AryaRaiin
+
+# Mapping/Shuttles
+/Resources/Maps/ @LokiLotus
+/Resources/Prototypes/Maps @LokiLotus
+/Resources/Prototypes/_PE/Maps @LokiLotus
+/Content.IntegrationTests/Tests/PostMapInitTest.cs @LokiLotus
