@@ -4,7 +4,7 @@ appraisal-label-name = Item
 appraisal-label-price = Appraised Price
 
 # Ledger cartridge
-ledger-program-name = CreditFlow Lite
+ledger-program-name = SpesoFlow Lite
 ledger-header = Sector Ledger
 ledger-total-income = Total Income
 ledger-no-income = None
@@ -13,9 +13,14 @@ ledger-no-expenses = None
 ledger-balance = Balance:
 ledger-no-balance = N/A
 
-ledger-tab-Frontier = Colonial Outpost
-ledger-tab-Nfsd = TSFMC
-ledger-tab-Medical = Medical Dispatch
+ledger-tab-Frontier = Station
+ledger-tab-Nfsd = NFSD
+ledger-tab-Medical = Med
+ledger-tab-Science = Sci
+ledger-tab-Service = Serv
+ledger-tab-Security = Sec
+ledger-tab-Engineering = Engi
+ledger-tab-Cargo = Cargo
 ledger-tab-BlackMarket = Black Market
 # Fallback, if this displays, something's wrong.
 ledger-tab-Unknown = Unknown
@@ -24,6 +29,8 @@ ledger-entry-type-TickingIncome = Subsidies
 ledger-entry-type-VendorTax = Vendor Taxes
 ledger-entry-type-CargoTax = Cargo Taxes
 ledger-entry-type-MailDelivered = Mail Payments
+ledger-entry-type-BlackMarketAtmTax = Anon. Benefactors
+ledger-entry-type-BlackMarketShipyardTax = Anon. Scrap Resale
 ledger-entry-type-AtmTax = ATM Taxes
 ledger-entry-type-ShipyardTax = Shipyard Taxes
 ledger-entry-type-BlackMarketSales = Smuggling Sales

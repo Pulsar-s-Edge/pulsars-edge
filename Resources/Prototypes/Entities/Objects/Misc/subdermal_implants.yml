@@ -114,8 +114,8 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: TrackingImplant
-  name: TSFMC tracking implant # Mono - TSFMC named now
-  description: This implant has a condition monitor for the TSFMC radio channel. # Frontier: NFSD mentioned, no tracking
+  name: tracking implant
+  description: This implant has a condition monitor for the NFSD radio channel. # Frontier: NFSD mentioned, no tracking
   categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
@@ -156,7 +156,7 @@
         - Hands # no use giving a mouse a storage implant, but a monkey is another story...
     - type: Storage
       grid:
-      - 0,0,2,2
+      - 0,0,3,3
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -182,7 +182,7 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: RadioImplant
-  name: radio implant
+  name: syndicate radio implant # Frontier: add syndicate
   description: This implant grants access to the Syndicate channel without a headset.
   categories: [ HideSpawnMenu ]
   components:
@@ -381,21 +381,30 @@
   categories: [ HideSpawnMenu ]
   components:
    - type: SubdermalImplant
-     permanent: true
    - type: Tag
      tags:
-       - MindShield
+     - MindShield
 
-# Centcomm implants
+# Colcomm implants
 
 - type: entity
   parent: BaseSubdermalImplant
-  id: RadioImplantCentcomm
+  id: RadioImplantColcomm
   name: radio implant
-  description: This implant grants access to the Centcomm channel without a headset. Only authorized for Centcomm employees.
+  description: This implant grants access to the Colcomm channel without a headset. Only authorized for Colcomm employees.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
   - type: RadioImplant
     radioChannels:
-    - CentCom
+    - ColCom
+
+- type: entity
+  parent: DeathRattleImplant
+  id: DeathRattleImplantColcomm
+  name: Colcomm death rattle implant
+  description: This implant will inform the Colcomm radio channel should the user fall into critical condition or die.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Rattle
+    radioChannel: ColCom
